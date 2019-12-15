@@ -1,0 +1,29 @@
+
+        <main>
+                
+            <div *ngIf='orders.length>0; else noProduct'>
+
+           
+                <ul class="orders">
+                        <li class="orders__item" *ngFor='let order of orders'>
+                            <h1>Order Id: {{order._id}}, Total Price: Rs.{{order.TotalPrice}} <h6>Status: {{order.status}}</h6><h6>Delivery: {{order.delivery}}</h6><h6>Name: {{order.userId.name}}</h6><h6>Contact: {{order.userId.contact}}</h6><h6>Address: {{order.address}}</h6></h1>
+                            <ul class="orders__products">
+                               
+                                    <li class="orders__products-item"  *ngFor='let p of order.orders'>{{p.name}} ({{p.quantity}})</li>
+                              
+                            </ul>
+                            <div class="centered">
+                   
+                     
+                                <button  class="btn" (click)="acceptedOrder(order._id)">Accept</button>
+                                <button  class="btn" (click)="deliveryStart(order._id)">Start</button>
+                                <button  class="btn" (click)="delivered(order._id)">Delivered</button>
+                                   
+                            </div>
+                        </li>
+                </ul>
+            </div>
+                <ng-template #noProduct><h1 id='ng_template' *ngIf='NoProduct'>Nothing Ordered!!!</h1></ng-template>
+        </main>
+
+        

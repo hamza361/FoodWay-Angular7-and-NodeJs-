@@ -1,0 +1,75 @@
+
+
+<main>
+
+
+<div class="row" id='add_edit'>
+  <div class="col-xs-12 border_div">
+      <form  *ngIf="ProductForm" (ngSubmit)="onSubmit()" [formGroup]="ProductForm" > 
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control" [formControlName]="'name'">
+              <span class='help-block' *ngIf="!ProductForm.get('name').valid && ProductForm.get('name').touched">Please Enter a valid name.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="image">Choose</label>
+                <button  class="form-control" (click)='filePicker.click()' type="button">Pick an image</button>
+                <input type="file" #filePicker id="image" (change)='onImagePicked($event)'>
+                <span class='help-block' *ngIf="!ProductForm.get('imagePath').valid && ProductForm.get('imagePath').touched">Please Enter an image.</span>
+                <div class="col-xs-12" *ngIf="imagePreview"  class="img-responsive">
+                    <img [src]="imagePreview">
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" step="0.01"  class="form-control" [formControlName]="'price'">
+                <span class='help-block' *ngIf="!ProductForm.get('price').valid && ProductForm.get('price').touched">Please Enter a valid price.</span>
+              </div>
+            </div>
+          </div>
+       
+            <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea type="text" id="description" class="form-control" rows="6" [formControlName]="'description'" ></textarea>
+                    <span class='help-block' *ngIf="!ProductForm.get('description').valid && ProductForm.get('description').touched">Please Enter a valid Description of min 3 characters.</span>
+                  </div>
+                </div>
+              </div>
+           <div class="row" *ngIf='!edit_mode && !_id'>
+            <div class="col-xs-12" >
+              <div class="form-group" *ngFor='let categ of categories' >
+                <label>
+                    <input type="radio" id="option" name="category" value="{{categ}}" [formControlName]="'category'"> {{categ | titlecase}}
+                   
+                </label>
+               
+              </div>
+  
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+                <button  type="submit" type="submit" [disabled]="!ProductForm.valid" class="btn btn-successs">{{edit_mode ?'Edit' : 'Save'}}</button>
+                <span></span>
+                <button type="submit" [disabled]="!ProductForm.valid" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+              </div>
+          </div>
+      </form>
+  </div>
+
+</div>
+
+</main>

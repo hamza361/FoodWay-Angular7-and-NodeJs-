@@ -1,0 +1,29 @@
+
+
+<main>
+
+
+  <div class="row">
+    <div class="col-xs-12 border_div">
+        <form  *ngIf="ContactForm" (ngSubmit)="onSubmit()" [formGroup]="ContactForm" > 
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="name">Enter the code: </label>
+                <input type="text" class="form-control" [formControlName]="'code'">
+                <span class='help-block' *ngIf="!ContactForm.get('code').valid && ContactForm.get('code').touched">Please Enter the valid Code.</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+                <div class="col-xs-12">
+
+                  <button type="submit" [disabled]="!ContactForm.valid" class="btn btn-success">Verify</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  
+  </div>
+  
+  </main>

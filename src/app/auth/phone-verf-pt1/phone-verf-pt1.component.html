@@ -1,0 +1,29 @@
+
+
+<main>
+
+
+  <div class="row">
+    <div class="col-xs-12 border_div">
+        <form  *ngIf="ContactForm" (ngSubmit)="onSubmit()" [formGroup]="ContactForm" > 
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="phoneNumber">Verify Your Phone Number: </label>
+                <input type="tel" id='phoneNumber' class="form-control" [formControlName]="'contact'">
+                <span class='help-block' *ngIf="!ContactForm.get('contact').valid && ContactForm.get('contact').touched">Please Enter a valid number.</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+                <div class="col-xs-12">
+
+                  <button type="submit" [disabled]="!ContactForm.valid" class="btn btn-success">Send Code</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  
+  </div>
+  
+  </main>

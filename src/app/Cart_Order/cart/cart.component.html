@@ -1,0 +1,31 @@
+
+        <main>
+                <div *ngIf='items.length>0; else noProduct'>
+                        <ul class="cart__item-list" *ngFor='let product of items'>
+                 
+                                <li class="cart__item">
+                                    <h1>{{product.name}}</h1>
+                                    <h2>{{product.quantity}}</h2>
+                           
+                            
+                                        <button class="btn danger" (click)='onDelete(product.productId)'>Delete</button>
+                                        
+                                </li>
+                
+                         </ul>
+                         <h3 *ngIf='items.length>0'>Total Price: Rs.{{TotalPrice}}</h3>
+                </div>
+               
+                <hr *ngIf="items.length>0">
+                <div class="centered" *ngIf="items.length>0">
+                   
+                     
+                        <button  class="btn" (click)="orderNow()">Order now!</button>
+                   
+                </div>
+                
+                <ng-template #noProduct><h1 id='ng_template' *ngIf='NoProduct'>Nothing Selected!!!</h1></ng-template>
+            
+    
+        </main>
+      

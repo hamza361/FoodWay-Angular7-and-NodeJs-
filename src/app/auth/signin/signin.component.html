@@ -1,0 +1,27 @@
+
+    <form  *ngIf="SignInForm" (ngSubmit)='onSubmit()' [formGroup]="SignInForm">
+        <div class="imgcontainer">
+          <img src="http://localhost:3000/images/logo2.png" alt="Check Your Connection." class="avatar">
+        </div>
+      
+        <div class="container" >
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact"  placeholder="Contact" class="form-control" [formControlName]="'contact'" >
+                <span class='help-block' *ngIf="!SignInForm.get('contact').valid && SignInForm.get('contact').touched">Please Enter a valid number.</span>
+            </div>
+            <div class="form-group">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" id="psw" placeholder="Password"   class="form-control" [formControlName]="'password'">
+                <span class='help-block' *ngIf="!SignInForm.get('password').valid && SignInForm.get('password').touched">Please Enter a valid password.</span>
+            </div>
+          <button type="submit" [disabled]="!SignInForm.valid "  class="btn btn-primary">Login</button>
+         
+        </div>
+      
+        <div class="container">
+          <span class="psw" [routerLink]="['/reset_form_pt1']">Forgot <a>password?</a></span>
+        </div>
+      </form>
+    
+  

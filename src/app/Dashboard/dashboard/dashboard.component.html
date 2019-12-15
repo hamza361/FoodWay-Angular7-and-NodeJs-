@@ -1,0 +1,49 @@
+
+
+<main>
+
+
+  <div class="row" id='add_edit'>
+    <div class="col-xs-12 border_div">
+        <form  *ngIf="UserForm" (ngSubmit)="onSubmit()" [formGroup]="UserForm" > 
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" [formControlName]="'name'">
+                <span class='help-block' *ngIf="!UserForm.get('name').valid && UserForm.get('name').touched">Please Enter a valid name.</span>
+              </div>
+            </div>
+          </div>
+  
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email"   class="form-control" [formControlName]="'email'">
+                  <span class='help-block' *ngIf="!UserForm.get('email').valid && UserForm.get('email').touched">Please Enter a valid Email.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="passowrd" id="password"   class="form-control" [formControlName]="'password'">
+                  <span class='help-block' *ngIf="!UserForm.get('password').valid && UserForm.get('password').touched">Please Enter a valid Password.</span>
+                </div>
+              </div>
+            </div>
+         
+            <div class="row">
+                <div class="col-xs-12">
+                  <button  type="submit" [disabled]="!UserForm.valid" class="btn btn-successs">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  
+  </div>
+  
+  </main>

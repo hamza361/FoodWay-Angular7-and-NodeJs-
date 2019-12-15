@@ -1,0 +1,34 @@
+ <main class='main'>
+        <div class="grid" *ngIf='products.length>0; else noProduct'>
+                       
+            <article class="card product-item" *ngFor='let product of products '>
+                <header class="card__header">
+                        <h1 class="product__name">
+                          {{product.name}}
+                          </h1>
+                </header>
+                <div class="card__image">
+                  <img src="{{product.imagePath}}" alt="{{product.name}}">
+                </div>
+                <div class="card__content">
+                  <h2 class="product__price">
+                   Rs.{{product.price}}
+                  </h2>
+                  <p class="product__description">
+                    {{product.description}}
+                  </p>
+                </div>
+                <div class="card__actions">
+                    <a *ngIf='adminIsAuthenticated' class="btn" type="submit"  (click)='onEdit(product._id)'>Edit</a>
+                    <a  *ngIf='adminIsAuthenticated' class="btn" type="submit" (click)="onDelete(product._id)">Delete</a>
+                    <button class="btn" (click)='addToCart(product._id)'>Add to Cart</button>
+                </div>
+            </article>
+                         
+        </div>
+        <ng-template #noProduct><h1 id='ng_template' *ngIf='NoProduct'>No Products!!!</h1></ng-template>
+          
+        
+                 
+  </main>
+       

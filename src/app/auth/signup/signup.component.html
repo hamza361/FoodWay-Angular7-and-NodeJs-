@@ -1,0 +1,34 @@
+
+
+<main>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 signup" >
+        <form *ngIf="SignUpForm"  (ngSubmit)="onSubmit()" [formGroup]="SignUpForm" >
+          <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" [formControlName]="'name'">
+                <span class='help-block' *ngIf="!SignUpForm.get('name').valid && SignUpForm.get('name').touched">Please Enter a valid name.</span>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email"  class="form-control" [formControlName]="'email'">
+            <span class='help-block' *ngIf="!SignUpForm.get('email').valid && SignUpForm.get('email').touched">Please Enter a valid email.</span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"  class="form-control" [formControlName]="'password'" [(ngModel)]="password">
+            <span class='help-block' *ngIf="!SignUpForm.get('password').valid && SignUpForm.get('password').touched">Please Enter a valid password.</span>
+          </div>
+          <div class="form-group">
+              <label for="confirm_password">Confirm Password</label>
+              <input type="password"  class="form-control" [formControlName]="'confirm_password'">
+              <span class='help-block' *ngIf="!SignUpForm.get('confirm_password').valid && SignUpForm.get('confirm_password').touched">Please Enter the same password.</span>
+          </div>
+
+          <button class="btn btn-primary" [disabled]="!SignUpForm.valid " type="submit">Sign Up</button>
+        </form>
+      </div>
+
+
+</main>
+
+<img src="http://localhost:3000/images/logo2.png" alt="Check Your Connection." class='avatar'>

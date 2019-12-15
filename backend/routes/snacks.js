@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const snacks_controller = require('../controllers/snacks');
+const checkAuth = require('../middleware/check-auth');
+router.get('/get-products',checkAuth,snacks_controller.getProducts);
+router.post('/add-product',checkAuth,snacks_controller.addProduct);
+router.delete('/delete-product/:_id',checkAuth,snacks_controller.deleteProduct);
+router.get('/get-product/:_id',checkAuth,snacks_controller.getProduct);
+router.patch('/edit-product',checkAuth,snacks_controller.editProduct);
+module.exports = router;

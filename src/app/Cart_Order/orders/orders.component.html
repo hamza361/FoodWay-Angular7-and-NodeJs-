@@ -1,0 +1,32 @@
+
+        <main>
+                
+                <div *ngIf='orders.length>0; else noProduct'>
+
+               
+                    <ul class="orders">
+                     
+                        
+                              
+                        <li class="orders__item" *ngFor='let order of orders'>
+                                <kendo-pdf-export #pdf  paperSize="A4" margin="2cm">
+                                        <h1><h5>Order Id: {{order._id}}</h5><h5>Total Price: Rs.{{order.TotalPrice}}</h5> <h5>Status: {{order.status}}</h5><h5>Delivery: {{order.delivery}}</h5><h5></h5></h1>
+                                                <ul class="orders__products">
+                                        
+                                                        <li class="orders__products-item"  *ngFor='let p of order.orders'>{{p.name}} ({{p.quantity}})</li>
+                                  
+                                                </ul>
+                                </kendo-pdf-export>
+                                        
+                                <button kendo-button (click)="pdf.saveAs(order._id+'.pdf')" class="btn">Download PDF</button>
+                        </li>
+                             
+                   
+                          
+                    </ul>
+                   
+                </div>
+                    <ng-template #noProduct><h1 id='ng_template' *ngIf='NoProduct'>Nothing Ordered!!!</h1></ng-template>
+            </main>
+    
+            

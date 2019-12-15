@@ -1,0 +1,214 @@
+.main_1{
+  background-color:white;
+  height: 100vh;
+}
+.main_2{
+ 
+  background:white;
+  padding-bottom: 60px;
+
+
+}
+#slidy-container { 
+  width: 50%;height: 60%; overflow: hidden; 
+  margin: 0 auto;
+  padding-top:  10%;
+  border-radius:5%;
+}
+
+.social_media_links{
+  font-size: 50px;
+  cursor: pointer;
+}
+
+footer{
+  border: 1px solid black;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+ 
+}
+
+#footer_div{
+  background-color: #1a1a1a;
+  color: whitesmoke;
+  margin-top: 2%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+
+}
+
+#social_links{
+  padding-left:7%;
+}
+
+@media only screen and (max-width: 976px) {
+  .quate{
+    margin-top: 10%;
+    
+  }
+  .Himage{
+    width: 300px;
+    height: 300px;
+    margin-left: 25%;
+  }
+  #slidy-container {  
+      width: 90%;height: 90%; overflow: hidden; 
+      margin: 0 auto;
+      padding-top:  10%;
+      border-radius:5%;
+   
+    
+    
+  }
+}
+
+@media only screen and (max-width: 1110px) {
+  .quate{
+    margin-top: 15%;
+    
+  }
+
+}
+
+@media only screen and (min-width: 1380px) {
+ 
+  .Himage{
+    width: 500px;
+    height: 500px;
+    margin-left: 30%;
+  }
+ 
+}
+
+
+@media only screen and (max-width: 1345px) {
+ 
+  .Himage{
+    width: 350px;
+    height: 350px;
+    margin-left: 35%;
+  }
+  #social_links{
+    padding-left: 44%;
+  }
+ 
+}
+
+@media only screen and (max-width: 1160px) {
+ 
+ 
+  #social_links{
+    padding-left: 43%;
+  }
+ 
+}
+
+@media only screen and (max-width: 965px) {
+ 
+ 
+  #social_links{
+    padding-left: 41%;
+  }
+ 
+}
+
+@media only screen and (max-width: 820px) {
+ 
+ 
+  #social_links{
+    padding-left: 40%;
+  }
+ 
+}
+
+@media only screen and (max-width: 675px) {
+ 
+ 
+  #social_links{
+    padding-left: 38%;
+  }
+ 
+}
+
+@media only screen and (max-width: 520px) {
+ 
+ 
+  #social_links{
+    padding-left: 34%;
+  }
+ 
+}
+
+
+@media only screen and (max-width: 490px) {
+ 
+ 
+  #social_links{
+    padding-left: 31%;
+  }
+ 
+}
+
+
+
+
+@media only screen and (max-width: 740px) {
+ 
+  .Himage{
+   
+    margin-left: 30%;
+  }
+ 
+}
+
+@media only screen and (max-width: 670px) {
+ 
+  .Himage{
+   
+    margin-left: 27%;
+  }
+ 
+}
+
+
+@media only screen and (max-width: 620px) {
+ 
+  .Himage{
+   
+    margin-left: 24%;
+  }
+ 
+}
+
+@media only screen and (max-width: 600px) {
+ 
+  .Himage{
+   
+    margin-left: 20%;
+  
+
+  }
+
+  #social_links{
+    padding-left: 36%;
+  }
+ 
+}
+
+@media only screen and (max-width: 500px) {
+ 
+  .Himage{
+   
+    margin-left: 15%;
+    
+  
+  }
+
+  #social_links{
+    padding-left: 33%;
+  }
+
+
+ 
+}
+

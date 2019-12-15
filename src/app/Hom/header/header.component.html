@@ -1,0 +1,44 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background: -webkit-linear-gradient(left,#ffd11a,#ff8533,#ffd11a);"> 
+
+  <div class="container">
+      
+      <div class="navbar-header">
+          <a [routerLink]="['/']" class="navbar-brand" style="color:black;font-weight: bolder;font-family:'Yeon Sung', cursive;"><i class="fa fa-cutlery" aria-hidden="true"></i> FoodWay</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded ="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>	
+          </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-nav-demo">
+
+          <ul class="nav navbar-nav">
+              <li *ngIf='userIsAuthenticated' routerLinkActive="header_active"><a  style="color: black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/deals/exclusive-discounted-deals']" >Exclusive Discount Deals</a></li>
+              <li *ngIf='userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/deals/pizza']" >Pizza</a></li>
+              <li *ngIf='userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/deals/snacks']">Snacks</a></li>
+              <li *ngIf='userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/cart']">Cart</a></li>
+              <li *ngIf='userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/orders']">Orders</a></li>
+              <li *ngIf='adminIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/admin/admin_orders']">Admin Orders</a></li>
+              <li *ngIf='adminIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/admin/add_product']">Add Product</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+              <li *ngIf='!userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black ;font-family: 'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/phone_verf_pt1']" >Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+              <li *ngIf='!userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family: 'Roboto', sans-serif;font-size:15px;font-weight: bolder;"[routerLink]="['/Signin']">Login <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+              <li *ngIf='userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family:'Yeon Sung', cursive;font-size:15px;font-weight: bolder;" [routerLink]="['/dashboard']"><i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 140%;"></i></a></li>
+              <li (click)='onLogout()' *ngIf='userIsAuthenticated' routerLinkActive="header_active"><a  style="color:black;font-family: 'Roboto', sans-serif;font-size:15px;font-weight: bolder;cursor: pointer;">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+              
+            
+          </ul>
+          
+
+      </div>
+  
+
+  </div>
+
+</nav>
+
+
+

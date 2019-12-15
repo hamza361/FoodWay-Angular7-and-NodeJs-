@@ -1,0 +1,62 @@
+/* 
+.border_div{
+    border: 3px solid #f1f1f1;
+   
+}
+
+form{
+    padding-bottom: 2%;
+    padding-top: 2%;
+} */
+
+#add_edit{
+    width: 40%;
+
+    margin:0 auto;
+    margin-bottom: 2%;
+    padding-top: 8%;
+  
+  
+
+}
+
+span{
+    padding-left: 2%;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+input[type='file']{
+    visibility: hidden;
+}
+
+
+.img-responsive{
+    height: 20rem;
+    margin:0 auto;
+}
+
+.img-responsive img{
+    height: 100%;
+}
+
+@media only screen and (max-width: 790px) {
+    #add_edit {
+
+        padding-top: 15%;
+    }
+   
+  }
+
+  @media only screen and (max-width: 700px) {
+    #add_edit {
+
+        padding-top: 15%;
+    }
+   
+  }
